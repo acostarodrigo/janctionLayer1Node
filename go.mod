@@ -29,6 +29,7 @@ require (
 	github.com/janction/videoRendering v0.0.0-00010101000000-000000000000
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/viper v1.19.0
+	gopkg.in/yaml.v2 v2.4.0
 )
 
 require (

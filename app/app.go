@@ -87,6 +87,7 @@ func init() {
 
 // AppConfig returns the default app config.
 func AppConfig() depinject.Config {
+	SetRootPath()
 	return depinject.Configs(
 		appconfig.LoadYAML(AppConfigYAML),
 		depinject.Supply(
