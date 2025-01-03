@@ -121,6 +121,7 @@ func NewMiniApp(
 				appOpts,
 			),
 		),
+
 		&appBuilder,
 		&app.appCodec,
 		&app.legacyAmino,

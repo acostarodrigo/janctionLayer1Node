@@ -48,3 +48,4 @@ modules:
   - name: videoRendering
     config:
       "@type": janction.videoRendering.module.v1.Module
+      Path: time.second
