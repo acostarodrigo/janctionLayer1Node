@@ -26,6 +26,7 @@ import (
 	genutilcli "github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
 
 	"github.com/cosmosregistry/chain-minimal/app"
+	videorenderingcommands "github.com/cosmosregistry/chain-minimal/cmd/minid/cmd/videoRenderingCommands"
 )
 
 func initRootCmd(rootCmd *cobra.Command, txConfig client.TxConfig, basicManager module.BasicManager) {
@@ -49,6 +50,7 @@ func initRootCmd(rootCmd *cobra.Command, txConfig client.TxConfig, basicManager 
 		queryCommand(),
 		txCommand(),
 		keys.Commands(),
+		videorenderingcommands.Commands(app.DefaultNodeHome),
 	)
 }
 
