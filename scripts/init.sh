@@ -24,3 +24,6 @@ $MINID_BIN genesis add-genesis-account bob 1000mini --keyring-backend test
 # create default validator
 $MINID_BIN genesis gentx alice 1000000mini --chain-id demo
 $MINID_BIN genesis collect-gentxs
+# video Rendering settings
+$MINID_BIN videoRendering enable true
+$MINID_BIN videoRendering setWorker alice test 0 1
