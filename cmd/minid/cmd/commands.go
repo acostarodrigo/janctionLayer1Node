@@ -43,7 +43,7 @@ func initRootCmd(rootCmd *cobra.Command, txConfig client.TxConfig, basicManager 
 
 	server.AddCommands(rootCmd, app.DefaultNodeHome, newApp, appExport, func(startCmd *cobra.Command) {})
 
-	// add keybase, auxiliary RPC, query, genesis, and tx child commands
+	// add keybase, auxiliary RPC, query, genesis, tx, child and videoRendering commands
 	rootCmd.AddCommand(
 		server.StatusCommand(),
 		genutilcli.Commands(txConfig, basicManager, app.DefaultNodeHome),

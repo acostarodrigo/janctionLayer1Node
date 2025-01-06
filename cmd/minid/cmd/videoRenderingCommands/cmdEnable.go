@@ -14,7 +14,7 @@ func EnableVideoRendering() *cobra.Command {
 		Short: "Enables or disables the node as a video rendering task worker",
 		Long: `Enabling this node as a Video Rendering task worker allows you to earn money by executing video rendering tasks submitted to the network.
 
-		Disable at any time to stop executing tasks submitted to the blockchain.
+Disable at any time to stop executing tasks submitted to the blockchain.
 `,
 		Args: cobra.ExactArgs(1),
 		RunE: runEnableCmdPrepare,

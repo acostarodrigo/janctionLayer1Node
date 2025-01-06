@@ -2,6 +2,7 @@ package videorenderingcommands
 
 import (
 	"errors"
+	"io/fs"
 	"log"
 	"os"
 
@@ -17,8 +18,16 @@ type VideoConfiguration struct {
 }
 
 func GetConf() (*VideoConfiguration, error) {
-	var path string = DefaultNodeHome + "/config/videoRendering.toml"
 	conf := VideoConfiguration{Enabled: false}
+
+	// we verify if the default config path exists
+	_, err := os.Stat(DefaultNodeHome)
+	if errors.Is(err, fs.ErrNotExist) {
+		log.Println("File doesn't exists", DefaultNodeHome)
+		return &conf, nil
+	}
+
+	var path string = DefaultNodeHome + "/config/videoRendering.toml"
 	// Load the YAML file
 	file, err := os.Open(path)
 	if err != nil {
@@ -42,6 +51,13 @@ func GetConf() (*VideoConfiguration, error) {
 }
 
 func (c *VideoConfiguration) SaveConf() error {
+	// we verify if the default config path exists
+	_, err := os.Stat(DefaultNodeHome)
+	if errors.Is(err, fs.ErrNotExist) {
+		log.Println("File doesn't exists", DefaultNodeHome)
+		return nil
+	}
+
 	var path string = DefaultNodeHome + "/config/videoRendering.toml"
 	// Marshal the struct into YAML format
 	data, err := toml.Marshal(&c)
