@@ -6,6 +6,7 @@ modules:
     begin_blockers:
     - distribution
     - staking
+    - videoRendering
     end_blockers:
     - staking
     - videoRendering

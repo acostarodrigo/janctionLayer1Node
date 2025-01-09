@@ -26,4 +26,5 @@ $MINID_BIN genesis gentx alice 1000000mini --chain-id demo
 $MINID_BIN genesis collect-gentxs
 # video Rendering settings
 $MINID_BIN videoRendering enable true
-$MINID_BIN videoRendering setWorker alice test 0 1
+key=$($MINID_BIN keys show alice -a)
+$MINID_BIN videoRendering setWorker alice $key test 0 1

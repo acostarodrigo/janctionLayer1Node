@@ -12,6 +12,7 @@ import (
 type VideoConfiguration struct {
 	Enabled           bool   `toml:"enabled"`
 	WorkerName        string `toml:"worker_name"`
+	WorkerAddress     string `toml:"worker_address"`
 	WorkerKeyLocation string `toml:"worker_key_location"`
 	MinReward         int64  `toml:"min_reward"`
 	GPUAmount         int64  `toml:"gpu_amount"`
