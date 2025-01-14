@@ -10,8 +10,9 @@ import (
 
 func EnableVideoRendering() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "enable <bool>",
-		Short: "Enables or disables the node as a video rendering task worker",
+		Use:     "enable <bool>",
+		Example: "minid videoRendering enable true",
+		Short:   "Enables or disables the node as a video rendering task worker",
 		Long: `Enabling this node as a Video Rendering task worker allows you to earn money by executing video rendering tasks submitted to the network.
 
 Disable at any time to stop executing tasks submitted to the blockchain.
