@@ -11,8 +11,9 @@ import (
 
 func SetWorker() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "setWorker <name> <address> <key_chain_location: test|os> <minReward> <gpu amount>",
-		Short: "Configures the video rendering worker parameters",
+		Use:     "setWorker <name> <address> <key_chain_location: test|os> <minReward> <gpu amount>",
+		Short:   "Configures the video rendering worker parameters",
+		Example: "minid videoRendering setWorker alice mini15q9yw9qrrmpatsxcngwqycrgr3r7wv295kf3na test 0 1",
 		Long: `Worker name is the key is used to submit transactions related to video rendering tasks.
 Worker address is the crypto address to be used to sign transactions
 Key chain location is either test or os. If os, env variable ${password} will be used to automatically sign transactions.
