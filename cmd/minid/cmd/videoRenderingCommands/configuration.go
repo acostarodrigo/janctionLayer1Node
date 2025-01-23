@@ -24,7 +24,6 @@ func GetConf() (*VideoConfiguration, error) {
 	// we verify if the default config path exists
 	_, err := os.Stat(DefaultNodeHome)
 	if errors.Is(err, fs.ErrNotExist) {
-		log.Println("File doesn't exists", DefaultNodeHome)
 		return &conf, nil
 	}
 
@@ -55,7 +54,6 @@ func (c *VideoConfiguration) SaveConf() error {
 	// we verify if the default config path exists
 	_, err := os.Stat(DefaultNodeHome)
 	if errors.Is(err, fs.ErrNotExist) {
-		log.Println("File doesn't exists", DefaultNodeHome)
 		return nil
 	}
 
