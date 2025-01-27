@@ -61,4 +61,4 @@ modules:
 - name: videoRendering
   config:
     '@type': janction.videoRendering.module.v1.Module
-    path: /Users/rodrigoacosta/.janction
+    path: /Users/rodrigoacosta/.janctiond

@@ -79,7 +79,7 @@ type MiniApp struct {
 func init() {
 	var err error
 	clienthelpers.EnvPrefix = "JANCTION"
-	DefaultNodeHome, err = clienthelpers.GetNodeHomeDirectory(".janction")
+	DefaultNodeHome, err = clienthelpers.GetNodeHomeDirectory(".janctiond")
 	if err != nil {
 		panic(err)
 	}
