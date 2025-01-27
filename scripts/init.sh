@@ -27,5 +27,4 @@ $JANCTIOND_BIN genesis collect-gentxs
 # video Rendering settings
 $JANCTIOND_BIN videoRendering enable true
 key=$($JANCTIOND_BIN keys show alice -a)
-ECHO Alice is $key
 $JANCTIOND_BIN videoRendering setWorker alice $key test 0 1
