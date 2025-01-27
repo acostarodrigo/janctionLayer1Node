@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  test-minid:
+  test-janctiond:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -29,15 +29,15 @@ jobs:
         run: |
           make install
           make init
-          minid start &
-          MINID_PID=$!
+          janctiond start &
+          JANCTIOND_PID=$!
           cnt=0
-          while ! minid query block --type=height 5; do
+          while ! janctiond query block --type=height 5; do
             cnt=$((cnt + 1))
             if [ $cnt -gt 30 ]; then
-              kill -9 "$MINID_PID"
+              kill -9 "$JANCTIOND_PID"
               exit 1
             fi
             sleep 1
           done
-          kill -9 "$MINID_PID"
+          kill -9 "$JANCTIOND_PID"

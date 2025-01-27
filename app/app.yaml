@@ -2,7 +2,7 @@ modules:
 - name: runtime
   config:
     '@type': cosmos.app.runtime.v1alpha1.Module
-    app_name: MiniApp
+    app_name: JanctionApp
     begin_blockers:
     - distribution
     - staking
@@ -23,7 +23,7 @@ modules:
 - name: auth
   config:
     '@type': cosmos.auth.module.v1.Module
-    bech32_prefix: mini
+    bech32_prefix: janction
     module_account_permissions:
     - account: fee_collector
     - account: distribution
@@ -61,4 +61,4 @@ modules:
 - name: videoRendering
   config:
     '@type': janction.videoRendering.module.v1.Module
-    path: /Users/rodrigoacosta/.minid
+    path: /Users/rodrigoacosta/.janction

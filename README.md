@@ -25,6 +25,6 @@ git clone https://github.com/JasmyLab/janctionVideoRenderModule.git videoRenderi
    
    ```
     $ make init
-    $ minid start
+    $ janctiond start
    ```
 

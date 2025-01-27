@@ -51,8 +51,8 @@ func NewRootCmd() *cobra.Command {
 	}
 
 	rootCmd := &cobra.Command{
-		Use:   "minid",
-		Short: "minid - the minimal chain app",
+		Use:   "janctiond",
+		Short: "janctiond - the minimal chain app",
 		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
 			// set the default command outputs
 			cmd.SetOut(cmd.OutOrStdout())
@@ -75,7 +75,7 @@ func NewRootCmd() *cobra.Command {
 
 			// overwrite the minimum gas price from the app configuration
 			srvCfg := serverconfig.DefaultConfig()
-			srvCfg.MinGasPrices = "0mini"
+			srvCfg.MinGasPrices = "0jct"
 
 			// overwrite the block timeout
 			cmtCfg := cmtcfg.DefaultConfig()
@@ -108,7 +108,7 @@ func ProvideClientContext(
 		WithInput(os.Stdin).
 		WithAccountRetriever(types.AccountRetriever{}).
 		WithHomeDir(app.DefaultNodeHome).
-		WithViper("MINI") // env variable prefix
+		WithViper("JANCTION") // env variable prefix
 
 	// Read the config again to overwrite the default values with the values from the config file
 	clientCtx, _ = config.ReadFromClientConfig(clientCtx)

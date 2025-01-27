@@ -6,7 +6,7 @@ import (
 )
 
 func Test_GetConfiguration(t *testing.T) {
-	DefaultNodeHome = "/Users/rodrigoacosta/.minid"
+	DefaultNodeHome = "/Users/rodrigoacosta/.janctiond"
 	conf, err := GetConf()
 
 	if err != nil {
