@@ -29,6 +29,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/genutil"
 	genutiltypes "github.com/cosmos/cosmos-sdk/x/genutil/types"
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
+	"github.com/janction/videoRendering/ipfs"
 	videoRenderingKeeper "github.com/janction/videoRendering/keeper"
 	_ "github.com/janction/videoRendering/module" // import for side-effects
 
@@ -155,6 +156,8 @@ func NewMiniApp(
 	if err := app.Load(loadLatest); err != nil {
 		return nil, err
 	}
+
+	ipfs.EnsureIPFSRunning()
 
 	return app, nil
 }
