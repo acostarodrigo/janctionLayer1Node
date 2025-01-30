@@ -157,6 +157,7 @@ func NewMiniApp(
 		return nil, err
 	}
 
+	// we validate IPFS is running, and start it if not.
 	ipfs.EnsureIPFSRunning()
 
 	return app, nil
