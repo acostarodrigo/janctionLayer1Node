@@ -20,7 +20,6 @@ func SetRootPath() {
 	// Load the YAML file
 	file, err := os.Open("./app/app.yaml")
 	if err != nil {
-		fmt.Printf("Failed to open file: %v\n", err)
 		return
 	}
 	defer file.Close()
