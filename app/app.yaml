@@ -38,6 +38,9 @@ modules:
     - account: videoRendering
       permissions:
       - staking
+      - minter
+      - burner
+      - bank
 - name: bank
   config:
     '@type': cosmos.bank.module.v1.Module
