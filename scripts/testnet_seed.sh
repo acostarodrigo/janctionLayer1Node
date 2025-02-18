@@ -15,7 +15,7 @@ fi
 CONFIG_FILE="$HOME/.janctiond/config/config.toml"
 APP_FILE="$HOME/.janctiond/config/app.toml"
 GENESIS_FILE="$HOME/.janctiond/config/genesis.json"
-GITHUB="$HOME/janction/sourceCode/janction_testnet"
+GITHUB="$HOME/janction_testnet"
 
 # Get the public IP address
 public_ip=$(curl -4 -s https://icanhazip.com)
