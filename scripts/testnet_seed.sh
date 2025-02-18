@@ -18,12 +18,8 @@ GENESIS_FILE="$HOME/.janctiond/config/genesis.json"
 GITHUB="$HOME/janction/sourceCode/janction_testnet"
 
 # Get the public IP address
-public_ip=$(curl -s https://icanhazip.com)
-# Check if the IP address is IPv6 and format accordingly
-if [[ "$public_ip" =~ : ]]; then
-  # If it's IPv6, enclose it in square brackets
-  public_ip="[$public_ip]"
-fi
+public_ip=$(curl -4 -s https://icanhazip.com)
+
 # Gets the Layer 1 node id
 seed=$($JANCTIOND_BIN comet show-node-id)
 
