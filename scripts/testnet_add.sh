@@ -17,8 +17,9 @@ APP_FILE="$HOME/.janctiond/config/app.toml"
 
 # Download genesis.json and config.toml files
 cd $HOME/.janctiond/config
-curl -O https://raw.githubusercontent.com/acostarodrigo/janction_testnet/refs/heads/main/genesis.json
-curl -O https://raw.githubusercontent.com/acostarodrigo/janction_testnet/refs/heads/main/config.toml
+curl -O https://raw.githubusercontent.com/acostarodrigo/janction_testnet/main/genesis.json
+curl -O https://raw.githubusercontent.com/acostarodrigo/janction_testnet/main/config.toml
+
 
 # Replace in the config file to enable
 sed -i.bak "s/^enable = false/enable = true/" "$APP_FILE"
