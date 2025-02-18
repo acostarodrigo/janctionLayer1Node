@@ -31,12 +31,18 @@ sed -i.bak "s/^seeds = \"\"/seeds = \"$seed_and_ip\"/" "$CONFIG_FILE"
 
 # Replace in the config file for CORS allowed origins
 sed -i.bak "s/^cors_allowed_origins = \[\]/cors_allowed_origins = \[\"*\"\]/" "$CONFIG_FILE"
+sed -i.bak 's|^laddr = "tcp://127.0.0.1:26657"|laddr = "tcp://0.0.0.0:26657"|' "$CONFIG_FILE"
 
 # Replace in the config file to enable
 sed -i.bak "s/^enable = false/enable = true/" "$APP_FILE"
 
 # Replace in the config file for the address
 sed -i.bak 's/^address = "localhost:9090"/address = "0.0.0.0:9090"/' "$APP_FILE"
+
+cd $HOME
+eval "$(ssh-agent -s)"
+ssh-agent
+ssh-add githubaccess
 
 cp $GENESIS_FILE $GITHUB
 cp $CONFIG_FILE $GITHUB
@@ -51,3 +57,6 @@ git push origin
 # Remove backup files
 rm "$CONFIG_FILE.bak"
 rm "$APP_FILE.bak"
+
+echo "Starting node..."
+$JANCTIOND_BIN start
