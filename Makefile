@@ -32,3 +32,8 @@ install:
 
 init:
 	./scripts/init.sh
+
+testnet-seed:
+	./scripts/testnet_seed.sh
+testnet-add:
+	./scripts/testnet_add.sh
