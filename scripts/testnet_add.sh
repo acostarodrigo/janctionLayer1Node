@@ -37,8 +37,8 @@ rm "$APP_FILE.bak"
 rm "$CONFIG_FILE.bak"
 
 # add money to alice from faucet
-key=$($JANCTIOND_BIN keys show alice -a)
-$JANCTIOND_BIN tx bank send alice key 10000000 --yes --node tcp://3.19.120.0:26657
+# key=$($JANCTIOND_BIN keys show alice -a)
+# $JANCTIOND_BIN tx bank send alice $key 10000000jct --yes --node tcp://3.19.120.0:26657
 
 echo "Starting node..."
 $JANCTIOND_BIN start
