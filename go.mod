@@ -25,7 +25,7 @@ require (
 	cosmossdk.io/tools/confix v0.1.2
 	github.com/BurntSushi/toml v1.4.0
 	github.com/cometbft/cometbft v0.38.12
-	github.com/cosmos/cosmos-db v1.1.0
+	github.com/cosmos/cosmos-db v1.1.1
 	github.com/cosmos/cosmos-sdk v0.50.11
 	github.com/janction/videoRendering v0.0.0-00010101000000-000000000000
 	github.com/spf13/cobra v1.8.1
@@ -176,7 +176,7 @@ require (
 	github.com/sourcegraph/conc v0.3.0 // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
 	github.com/spf13/afero v1.11.0 // indirect
-	github.com/spf13/cast v1.7.0 // indirect
+	github.com/spf13/cast v1.7.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/stretchr/testify v1.10.0 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
