@@ -1,7 +1,6 @@
 module github.com/cosmosregistry/chain-minimal
 
 go 1.22.0
-
 toolchain go1.23.4
 
 replace (
@@ -16,7 +15,7 @@ replace (
 require (
 	cosmossdk.io/api v0.7.6
 	cosmossdk.io/client/v2 v2.0.0-beta.5
-	cosmossdk.io/core v0.11.1
+	cosmossdk.io/core v1.0.0
 	cosmossdk.io/depinject v1.1.0
 	cosmossdk.io/errors v1.0.1
 	cosmossdk.io/log v1.4.1
