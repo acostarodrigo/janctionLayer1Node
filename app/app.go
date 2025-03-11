@@ -32,7 +32,6 @@ import (
 	"github.com/janction/videoRendering/ipfs"
 	videoRenderingKeeper "github.com/janction/videoRendering/keeper"
 	_ "github.com/janction/videoRendering/module" // import for side-effects
-	"github.com/janction/videoRendering/zkp"
 
 	appv1alpha1 "cosmossdk.io/api/cosmos/app/v1alpha1"
 	_ "cosmossdk.io/api/cosmos/tx/config/v1"          // import for side-effects
@@ -160,12 +159,6 @@ func NewMiniApp(
 
 	// we validate IPFS is running, and start it if not.
 	ipfs.EnsureIPFSRunning()
-
-	// we initialize Gnark and create proving and verifying keys
-	err := zkp.InitGnark(DefaultNodeHome)
-	if err != nil {
-		panic(err)
-	}
 
 	return app, nil
 }
