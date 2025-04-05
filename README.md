@@ -61,4 +61,4 @@ git clone https://github.com/acostarodrigo/janctionVideoRenderingModule videoRen
 
 ## Testnet
 
-Instructions to join the testnet and contribute with your own node will be available soon.
+Instructions to join the testnet and contribute with your own node will be available soon!
