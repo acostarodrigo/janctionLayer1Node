@@ -36,13 +36,13 @@ Layer 1 node is currently under development. We are very close on being able to 
 1) Clone repositories
 
 ```
-git clone https://github.com/JasmyLab/JanctionL1.git layer1Node
+git clone https://github.com/acostarodrigo/janctionLayer1Node layer1Node
 ```
 
 Also clone the video rendering module on a folder called videoRendering
 
 ```
-git clone https://github.com/JasmyLab/janctionVideoRenderModule.git videoRendering
+git clone https://github.com/acostarodrigo/janctionVideoRenderingModule videoRendering
 ```
 
 2) compile
