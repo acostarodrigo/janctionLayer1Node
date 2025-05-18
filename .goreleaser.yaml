@@ -1,0 +1,57 @@
+version: 2
+project_name: videoRendering
+
+# 1) cross-compile
+builds:
+  - id: videoRendering
+    binary: videoRendering
+    goos: [linux, darwin, windows]
+    goarch: [amd64, arm64]
+    env: [CGO_ENABLED=0]
+
+# 2) plain archives + checksums
+archives:
+  - id: default
+    ids: [videoRendering]
+    formats: ["tar.gz", "zip"]
+    wrap_in_directory: true
+
+checksum:
+  name_template: "{{ .ProjectName }}_checksums_{{ .Version }}.txt"
+
+# 3) Linux packages via nFPM
+nfpms:
+  - id: linux
+    package_name: videoRendering
+    ids: [videoRendering]
+    formats: [deb, rpm]
+    maintainer: "You <you@example.com>"
+    description: "videoRendering — high-performance video rendering CLI"
+    contents:
+      - src: "./dist/videoRendering_{{ .Os }}_{{ .Arch }}/videoRendering"
+        dst: /usr/local/bin/videoRendering
+
+# 4) Homebrew tap formula
+brews:
+  - name: video-rendering
+    directory: Formula
+    repository:
+      owner: you
+      name: homebrew-tap
+    install: |
+      bin.install "videoRendering"
+    test: |
+      system "#{bin}/videoRendering", "--help"
+
+# 5) Scoop manifest for Windows users
+scoops:
+  - name: videoRendering
+    directory: Scoops
+
+# 6) push to GitHub Releases
+release:
+  github:
+    owner: you
+    name: videoRendering
+  draft: false
+  prerelease: false
