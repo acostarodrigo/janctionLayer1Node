@@ -12,6 +12,7 @@ if [ -z "$JANCTIOND_BIN" ]; then
     exit 1
 fi
 
+echo "Running " $JANCTIOND_BIN
 # configure janctiond
 $JANCTIOND_BIN config set client chain-id demo
 $JANCTIOND_BIN config set client keyring-backend test
