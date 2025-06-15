@@ -12,6 +12,9 @@ if [ -z "$JANCTIOND_BIN" ]; then
     exit 1
 fi
 
+echo "Downloading image..."
+docker pull blendergrid/blender
+
 echo "Running " $JANCTIOND_BIN
 # configure janctiond
 $JANCTIOND_BIN config set client chain-id demo
