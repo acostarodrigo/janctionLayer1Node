@@ -32,3 +32,6 @@ $JANCTIOND_BIN genesis collect-gentxs
 $JANCTIOND_BIN videoRendering enable true
 key=$($JANCTIOND_BIN keys show alice -a)
 $JANCTIOND_BIN videoRendering setWorker alice $key test 0 1
+# audio stem settings
+$JANCTIOND_BIN audioStem enable true
+$JANCTIOND_BIN audioStem setWorker alice $key test 0 1
