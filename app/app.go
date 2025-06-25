@@ -29,6 +29,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/genutil"
 	genutiltypes "github.com/cosmos/cosmos-sdk/x/genutil/types"
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
+	audioStemKeeper "github.com/janction/audioStem/keeper"
+	_ "github.com/janction/audioStem/module" // import for side-effects
 	"github.com/janction/videoRendering/ipfs"
 	videoRenderingKeeper "github.com/janction/videoRendering/keeper"
 	_ "github.com/janction/videoRendering/module" // import for side-effects
@@ -72,6 +74,7 @@ type MiniApp struct {
 	DistrKeeper           distrkeeper.Keeper
 	ConsensusParamsKeeper consensuskeeper.Keeper
 	VideoRenderingKeeper  videoRenderingKeeper.Keeper
+	AudioStemKeeper       audioStemKeeper.Keeper
 
 	// simulation manager
 	sm *module.SimulationManager
@@ -135,6 +138,7 @@ func NewMiniApp(
 		&app.DistrKeeper,
 		&app.ConsensusParamsKeeper,
 		&app.VideoRenderingKeeper,
+		&app.AudioStemKeeper,
 	); err != nil {
 		return nil, err
 	}

@@ -26,6 +26,7 @@ import (
 	genutilcli "github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
 
 	"github.com/cosmosregistry/chain-minimal/app"
+	audiostemcommands "github.com/cosmosregistry/chain-minimal/cmd/janctiond/cmd/audioStemCommands"
 	videorenderingcommands "github.com/cosmosregistry/chain-minimal/cmd/janctiond/cmd/videoRenderingCommands"
 )
 
@@ -51,6 +52,7 @@ func initRootCmd(rootCmd *cobra.Command, txConfig client.TxConfig, basicManager 
 		txCommand(),
 		keys.Commands(),
 		videorenderingcommands.Commands(app.DefaultNodeHome),
+		audiostemcommands.Commands(app.DefaultNodeHome),
 	)
 }
 
