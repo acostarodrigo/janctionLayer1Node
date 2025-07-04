@@ -30,7 +30,7 @@ GPUAmount [uint]: how many GPUs you are allowing the node to use while audio ste
 
 	cmd.AddCommand(
 		SetWorker(),
-		EnableVideoRendering(),
+		EnableAudioStem(),
 	)
 
 	cmd.PersistentFlags().String(cli.OutputFlag, "text", "Output format (text|json)")

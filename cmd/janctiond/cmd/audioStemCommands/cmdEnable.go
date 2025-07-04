@@ -8,12 +8,12 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func EnableVideoRendering() *cobra.Command {
+func EnableAudioStem() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "enable <bool>",
 		Example: "janctiond audioStem enable true",
 		Short:   "Enables or disables the node as a audio stem task worker",
-		Long: `Enabling this node as a audio stem task worker allows you to earn money by executing video rendering tasks submitted to the network.
+		Long: `Enabling this node as a audio stem task worker allows you to earn money by executing audio stem tasks submitted to the network.
 
 Disable at any time to stop executing tasks submitted to the blockchain.
 `,
