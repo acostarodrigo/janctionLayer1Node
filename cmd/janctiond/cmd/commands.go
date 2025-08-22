@@ -28,6 +28,7 @@ import (
 	"github.com/cosmosregistry/chain-minimal/app"
 	audiostemcommands "github.com/cosmosregistry/chain-minimal/cmd/janctiond/cmd/audioStemCommands"
 	videorenderingcommands "github.com/cosmosregistry/chain-minimal/cmd/janctiond/cmd/videoRenderingCommands"
+	videoupscalercommands "github.com/cosmosregistry/chain-minimal/cmd/janctiond/cmd/videoUpscalerCommands"
 )
 
 func initRootCmd(rootCmd *cobra.Command, txConfig client.TxConfig, basicManager module.BasicManager) {
@@ -53,6 +54,7 @@ func initRootCmd(rootCmd *cobra.Command, txConfig client.TxConfig, basicManager 
 		keys.Commands(),
 		videorenderingcommands.Commands(app.DefaultNodeHome),
 		audiostemcommands.Commands(app.DefaultNodeHome),
+		videoupscalercommands.Commands(app.DefaultNodeHome),
 	)
 }
 

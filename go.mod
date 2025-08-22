@@ -10,6 +10,7 @@ replace (
 	github.com/gin-gonic/gin => github.com/gin-gonic/gin v1.7.0
 	github.com/janction/audioStem => ../audioStem
 	github.com/janction/videoRendering => ../videoRendering
+	github.com/janction/videoUpscaler => ../videoUpscaler
 	// Downgraded to avoid bugs in following commits which caused simulations to fail.
 	github.com/syndtr/goleveldb => github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7
 )
@@ -30,6 +31,7 @@ require (
 	github.com/cosmos/cosmos-sdk v0.50.11
 	github.com/janction/audioStem v0.0.0-00010101000000-000000000000
 	github.com/janction/videoRendering v0.0.0-00010101000000-000000000000
+	github.com/janction/videoUpscaler v0.0.0-00010101000000-000000000000
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/viper v1.19.0
 	gopkg.in/yaml.v2 v2.4.0

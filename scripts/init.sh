@@ -35,3 +35,6 @@ $JANCTIOND_BIN videoRendering setWorker alice $key test 0 1
 # audio stem settings
 $JANCTIOND_BIN audioStem enable true
 $JANCTIOND_BIN audioStem setWorker alice $key test 0 1
+# video upscaer settings
+$JANCTIOND_BIN videoUpscaler enable true
+$JANCTIOND_BIN videoUpscaler setWorker alice $key test 0 1

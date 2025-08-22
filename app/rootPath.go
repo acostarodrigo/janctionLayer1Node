@@ -42,6 +42,10 @@ func SetRootPath() {
 			module.Config["path"] = DefaultNodeHome
 			cfg.Modules[i] = module
 		}
+		if module.Name == "videoUpscaler" {
+			module.Config["path"] = DefaultNodeHome
+			cfg.Modules[i] = module
+		}
 	}
 
 	// Write the modified YAML back to the file

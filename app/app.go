@@ -34,6 +34,8 @@ import (
 	"github.com/janction/videoRendering/ipfs"
 	videoRenderingKeeper "github.com/janction/videoRendering/keeper"
 	_ "github.com/janction/videoRendering/module" // import for side-effects
+	videoUpscalerKeeper "github.com/janction/videoUpscaler/keeper"
+	_ "github.com/janction/videoUpscaler/module" // import for side-effects
 
 	appv1alpha1 "cosmossdk.io/api/cosmos/app/v1alpha1"
 	_ "cosmossdk.io/api/cosmos/tx/config/v1"          // import for side-effects
@@ -75,6 +77,7 @@ type MiniApp struct {
 	ConsensusParamsKeeper consensuskeeper.Keeper
 	VideoRenderingKeeper  videoRenderingKeeper.Keeper
 	AudioStemKeeper       audioStemKeeper.Keeper
+	VideoUpscalerKeeper   videoUpscalerKeeper.Keeper
 
 	// simulation manager
 	sm *module.SimulationManager
@@ -138,6 +141,7 @@ func NewMiniApp(
 		&app.DistrKeeper,
 		&app.ConsensusParamsKeeper,
 		&app.VideoRenderingKeeper,
+		&app.VideoUpscalerKeeper,
 		&app.AudioStemKeeper,
 	); err != nil {
 		return nil, err

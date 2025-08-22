@@ -7,10 +7,12 @@ modules:
     - distribution
     - staking
     - videoRendering
+    - videoUpscaler
     - audioStem
     end_blockers:
     - staking
     - videoRendering
+    - videoUpscaler
     - audioStem
     init_genesis:
     - auth
@@ -19,6 +21,7 @@ modules:
     - staking
     - genutil
     - videoRendering
+    - videoUpscaler
     - audioStem
     override_store_keys:
     - kv_store_key: acc
@@ -50,6 +53,12 @@ modules:
       - minter
       - burner
       - bank
+    - account: videoUpscaler
+      permissions:
+      - staking
+      - minter
+      - burner
+      - bank
 - name: bank
   config:
     '@type': cosmos.bank.module.v1.Module
@@ -76,6 +85,10 @@ modules:
 - name: videoRendering
   config:
     '@type': janction.videoRendering.module.v1.Module
+    path: /Users/rodrigoacosta/.janctiond
+- name: videoUpscaler
+  config:
+    '@type': janction.videoUpscaler.module.v1.Module
     path: /Users/rodrigoacosta/.janctiond
 - name: audioStem
   config:
