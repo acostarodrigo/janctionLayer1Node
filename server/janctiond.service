@@ -6,10 +6,10 @@ Wants=network-online.target ipfs.service docker.service
 After=network-online.target ipfs.service docker.service
 
 [Service]
-User=ubuntu
+User=${USER_NAME}
 # If you keep the home here; adjust if different:
-Environment=HOME=/home/ubuntu
-Environment=JANCTION_HOME=/home/ubuntu/.janctiond
+Environment=HOME=/home/${USER_NAME}
+Environment=JANCTION_HOME=/home/${USER_NAME}/.janctiond
 # Wait for IPFS API before starting (optional but recommended)
 ExecStartPre=/usr/local/bin/wait-for-ipfs.sh
 # Start your node

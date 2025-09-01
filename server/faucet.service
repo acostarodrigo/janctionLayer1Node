@@ -6,7 +6,7 @@ Wants=network-online.target ipfs.service docker.service
 After=network-online.target ipfs.service docker.service
 
 [Service]
-User=ubuntu
+User=ec2-user
 # If it’s a binary:
 # ExecStart=/usr/local/bin/faucet --config /etc/faucet/config.yaml
 # If it’s a docker-compose or script, call that instead:
