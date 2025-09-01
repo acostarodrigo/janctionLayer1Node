@@ -12,8 +12,10 @@ if [ -z "$JANCTIOND_BIN" ]; then
     exit 1
 fi
 
-echo "Downloading image..."
+echo "Downloading images..."
 docker pull blendergrid/blender
+docker pull rodrigoa77/audio-stem
+docker pull rodrigoa77/upscaler-cpu
 
 echo "Running " $JANCTIOND_BIN
 # configure janctiond
