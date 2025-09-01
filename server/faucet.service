@@ -1,0 +1,20 @@
+# /etc/systemd/system/faucet.service
+
+[Unit]
+Description=Junction Faucet
+Wants=network-online.target ipfs.service docker.service
+After=network-online.target ipfs.service docker.service
+
+[Service]
+User=ubuntu
+# If it’s a binary:
+# ExecStart=/usr/local/bin/faucet --config /etc/faucet/config.yaml
+# If it’s a docker-compose or script, call that instead:
+# ExecStart=/usr/local/bin/faucet-start.sh
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

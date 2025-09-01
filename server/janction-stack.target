@@ -1,0 +1,6 @@
+# /etc/systemd/system/janction-stack.target
+
+[Unit]
+Description=Janction Full Stack
+Wants=ipfs.service faucet.service janctiond.service
+After=network-online.target

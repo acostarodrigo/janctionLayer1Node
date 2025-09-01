@@ -1,0 +1,27 @@
+# /etc/systemd/system/janctiond.service
+
+[Unit]
+Description=Janction Cosmos Node
+Wants=network-online.target ipfs.service docker.service
+After=network-online.target ipfs.service docker.service
+
+[Service]
+User=ubuntu
+# If you keep the home here; adjust if different:
+Environment=HOME=/home/ubuntu
+Environment=JANCTION_HOME=/home/ubuntu/.janctiond
+# Wait for IPFS API before starting (optional but recommended)
+ExecStartPre=/usr/local/bin/wait-for-ipfs.sh
+# Start your node
+ExecStart=/usr/local/bin/janctiond start --home ${JANCTION_HOME}
+# Always try to come back up:
+Restart=always
+RestartSec=3
+# Give it some resources:
+LimitNOFILE=65536
+# Ensure logs are flushed
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,20 @@
+# /etc/systemd/system/ipfs.service
+
+[Unit]
+Description=IPFS Daemon
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+# If you run IPFS under a non-root user, set User= and the IPFS_PATH.
+# Example for ubuntu user:
+User=ubuntu
+Environment=IPFS_PATH=/home/ubuntu/.ipfs
+ExecStart=/usr/local/bin/ipfs daemon --migrate=true --enable-gc
+Restart=on-failure
+RestartSec=5s
+# Give it some file descriptors & limits
+LimitNOFILE=1048576
+
+[Install]
+WantedBy=multi-user.target
