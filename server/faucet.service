@@ -6,15 +6,16 @@ After=network-online.target ipfs.service docker.service
 
 [Service]
 User=ec2-user
-WorkingDirectory=/home/ec2-user
-ExecStart=/usr/local/bin/janction-faucet
+WorkingDirectory=/home/ec2-user/janctionLayer1Faucet
+# Load simple KEY=VALUE lines from your .env (no export/$(...) etc.)
+EnvironmentFile=-/home/ec2-user/janctionLayer1Faucet/.env
+# Ensure go is found (adjust if Go lives elsewhere)
+Environment=PATH=/usr/local/go/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=/usr/local/go/bin/go run .
 Restart=always
 RestartSec=5
 StandardOutput=journal
 StandardError=journal
-# Optional hardening / niceties:
-NoNewPrivileges=yes
-LimitNOFILE=65535
 
 [Install]
 WantedBy=multi-user.target
