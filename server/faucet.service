@@ -1,20 +1,20 @@
 # /etc/systemd/system/faucet.service
-
 [Unit]
-Description=Junction Faucet
+Description=Janction Faucet
 Wants=network-online.target ipfs.service docker.service
 After=network-online.target ipfs.service docker.service
 
 [Service]
 User=ec2-user
-# If it’s a binary:
-# ExecStart=/usr/local/bin/faucet --config /etc/faucet/config.yaml
-# If it’s a docker-compose or script, call that instead:
-# ExecStart=/usr/local/bin/faucet-start.sh
+WorkingDirectory=/home/ec2-user
+ExecStart=/usr/local/bin/janction-faucet
 Restart=always
 RestartSec=5
 StandardOutput=journal
 StandardError=journal
+# Optional hardening / niceties:
+NoNewPrivileges=yes
+LimitNOFILE=65535
 
 [Install]
 WantedBy=multi-user.target
