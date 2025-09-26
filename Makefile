@@ -33,7 +33,7 @@ install:
 init:
 	./scripts/init.sh
 
-main_init:
+main-init:
 	./scripts/main_init.sh
 
 testnet-seed:
